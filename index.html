@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herrería Segovia</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4; /* Fondo original, pero se usará el color gris perlado oscuro brillante */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 10px solid red; /* Borde rojo grueso alrededor de la página */
+            min-height: calc(100vh - 40px); /* Ajusta la altura mínima para el borde */
+            box-sizing: border-box; /* Incluye el padding y el borde en el ancho/alto total */
+            /* Fondo gris perlado oscuro brillante */
+            background: linear-gradient(to bottom right, #cccccc, #aaaaaa, #b0b0b0); /* Degradado de grises con un toque brillante */
+            background-attachment: fixed; /* Mantiene el fondo fijo al hacer scroll */
+            background-size: 200% 200%; /* Tamaño más grande para el degradado, permitiendo el "brillo" */
+            animation: gradientAnimation 10s ease infinite; /* Animación para un efecto más dinámico */
+        }
+
+        /* Animación para el fondo brillante */
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .rojo-blanco {
+            background-color: red;
+            color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            text-align: center;
+            max-width: 600px;
+            width: 100%; /* Para que ocupe todo el ancho disponible en móviles */
+            box-sizing: border-box; /* Incluir padding y border en el ancho total */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada para resaltar */
+        }
+        .galeria-rejas {
+            display: flex;
+            flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+            gap: 10px;
+            margin-bottom: 20px;
+            justify-content: center; /* Centra las rejas cuando se envuelven */
+            width: 100%;
+            max-width: 600px;
+        }
+        .reja-item { /* Contenedor para la reja y su texto */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex-basis: calc(50% - 10px); /* Dos rejas por fila en móviles (aproximadamente) */
+            max-width: 150px; /* Limita el tamaño de cada reja en pantallas más grandes */
+        }
+        .reja {
+            width: 100px;
+            height: 100px;
+            border: 2px solid #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 5px; /* Espacio entre la reja y el texto */
+            /* Vertical stripes */
+            background-size: 20px 100%; /* Ancho de la raya y 100% de alto */
+            border-radius: 5px; /* Bordes ligeramente redondeados */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra para las rejas */
+        }
+        .reja.negra {
+            background-color: black;
+            background-image: linear-gradient(to right, black 50%, #333 50%);
+        }
+        .reja.roja {
+            background-color: red;
+            background-image: linear-gradient(to right, red 50%, #ff6666 50%);
+        }
+        .reja.blanca {
+            background-color: white;
+            border-color: #ccc;
+            color: black;
+            background-image: linear-gradient(to right, white 50%, #eee 50%);
+        }
+        .reja.azul {
+            background-color: blue;
+            background-image: linear-gradient(to right, blue 50%, #6666ff 50%);
+        }
+
+        .reja-texto {
+            font-size: 0.9em;
+            color: #555;
+            text-align: center;
+        }
+
+        .gris-oscuro-rojo {
+            background-color: #333;
+            color: red;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            text-align: center;
+            max-width: 600px;
+            width: 100%;
+            box-sizing: border-box;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada para resaltar */
+        }
+        .whatsapp {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 10px;
+        }
+        .numero-telefono {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #333;
+            word-break: break-all; /* Evita que números largos se desborden */
+        }
+
+        /* Media Queries para ajustes específicos de móviles */
+        @media (max-width: 480px) {
+            body {
+                padding: 10px; /* Menos padding en pantallas muy pequeñas */
+                min-height: calc(100vh - 20px); /* Ajusta la altura mínima para el borde */
+            }
+            .rojo-blanco, .gris-oscuro-rojo {
+                padding: 15px;
+            }
+            .galeria-rejas {
+                gap: 5px; /* Menos espacio entre rejas en móviles */
+            }
+            .reja-item {
+                flex-basis: calc(50% - 5px); /* Ajuste para dos rejas por fila */
+                max-width: none; /* Permite que las rejas se ajusten al 50% */
+            }
+            .reja {
+                width: 80px; /* Rejas un poco más pequeñas en móviles */
+                height: 80px;
+            }
+            .reja-texto {
+                font-size: 0.8em;
+            }
+            .numero-telefono {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="rojo-blanco">
+        <h2>Herrería Segovia</h2>
+        <p>Trabajos de calidad con excelentes materiales, convencional y artística. También hacemos colocación. Precios económicos, pregunte sin compromiso.</p>
+    </div>
+
+    <div class="galeria-rejas">
+        <div class="reja-item">
+            <div class="reja negra"></div>
+            <span class="reja-texto">Reja Negra</span>
+        </div>
+        <div class="reja-item">
+            <div class="reja roja"></div>
+            <span class="reja-texto">Reja Roja</span>
+        </div>
+        <div class="reja-item">
+            <div class="reja blanca"></div>
+            <span class="reja-texto">Reja Blanca</span>
+        </div>
+        <div class="reja-item">
+            <div class="reja azul"></div>
+            <span class="reja-texto">Reja Azul</span>
+        </div>
+    </div>
+
+    <div class="gris-oscuro-rojo">
+        <h3>Nuestra trayectoria nos avala, trabajos con garantía.</h3>
+    </div>
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Icono de WhatsApp" class="whatsapp">
+
+    <div class="numero-telefono">
+        1122785291
+    </div>
+</body>
+</html>
